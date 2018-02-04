@@ -30,7 +30,7 @@ font pango:monospace 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -159,15 +159,15 @@ bar {
 #Custom
 
 new_window 1pixel
-bindsym Mod1+Escape exec "gnome-screensaver-command -l"
+bindsym Mod1+Escape exec "i3lock -d -c 000000"
 
 #Dual monitor
-exec --no-startup-id xrandr --output DP-1 --auto --output DP-2 --auto --left-of DP-2
+exec --no-startup-id xrandr --output DP-1 --off --output DVI-D-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 bindsym Mod1+Shift+bracketleft move workspace to output left
 bindsym Mod1+Shift+bracketright move workspace to output right
 
 #auto lock
-exec xautolock -time 10 -locker "gnome-screensaver-command -l" &
+exec xautolock -time 20 -locker "i3lock -d -c 000000" &
 
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 16
